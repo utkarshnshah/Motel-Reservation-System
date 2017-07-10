@@ -1,0 +1,158 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="mrs.master.cs" Inherits="Motel_Reservation_System.mrs" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clarion Motels is one of the finest motels providing best service to its customers.">
+    <meta name="author" content="Utkarsh, Sulara & Seema">
+
+    <title>Clarion Motel</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/animate.css" rel="stylesheet" />
+    <link href="css/jquery-ui.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet">
+    <link href="color/default.css" rel="stylesheet">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="load"></div>
+    </div>
+    <form id="form1" runat="server">
+        <div id="scroll-to-top"></div>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <!-- Section: contact -->
+        <section id="contact" class="home-section text-center">
+            <div class="heading-contact">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="wow bounceInDown" data-wow-delay="0.4s">
+                                <div class="section-heading">
+                                    <h2>Get in touch</h2>
+                                    <i class="fa fa-2x fa-angle-down"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2 col-lg-offset-5">
+                        <hr class="marginbot-50">
+                    </div>
+                </div>
+                <div id="emailSent" class="alert alert-info row hidden" runat="server">
+                    <asp:Label Text="" ID="lblEmailSentMsg" runat="server" />
+                </div>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="boxed-grey">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <asp:RequiredFieldValidator id="rfvName" runat="server" ControlToValidate="txtContactName" ErrorMessage="*" ValidationGroup="vgContactUs" ForeColor="Red"></asp:RequiredFieldValidator>
+                                        <asp:Label Text="* Name" runat="server" />
+                                        <asp:TextBox placeholder="Enter Name" ID="txtContactName" CssClass="form-control" runat="server"></asp:TextBox>
+                                    </div>
+                                    <div class="form-group">
+                                        <asp:RequiredFieldValidator id="rfvEmail" runat="server" ControlToValidate="txtEmail" ErrorMessage="*" ValidationGroup="vgContactUs" ForeColor="Red"></asp:RequiredFieldValidator>
+                                        <asp:Label Text="* Email Address" runat="server" />
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+                                            <asp:TextBox class="form-control" ID="txtEmail" TextMode="Email" placeholder="Enter Email" runat="server"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <asp:RequiredFieldValidator id="rfvlTypeOfQuery" InitialValue="liSelect" ControlToValidate="ddlTypeOfQuery" ErrorMessage="*" ValidationGroup="vgContactUs" ForeColor="Red" runat="server" ></asp:RequiredFieldValidator>
+                                        <asp:Label Text="* Subject" runat="server" />
+                                        <asp:DropDownList ID="ddlTypeOfQuery" runat="server" CssClass="form-control" AppendDataBoundItems="true">
+                                            <asp:ListItem Text="Select" Value="liSelect" />
+                                            <asp:ListItem Text="Service" Value="liService" />
+                                            <asp:ListItem Text="Suggestions" Value="liSuggestions" />
+                                            <asp:ListItem Text="Product" Value="liProduct" />
+                                        </asp:DropDownList>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <asp:RequiredFieldValidator id="rfvMessage" runat="server" ControlToValidate="txtMessage" ErrorMessage="*" ValidationGroup="vgContactUs" ForeColor="Red"></asp:RequiredFieldValidator>
+                                        <asp:Label Text="* Message" runat="server" />
+                                        <asp:TextBox TextMode="MultiLine" id="txtMessage" CssClass="form-control" rows="9" placeholder="Your Message" runat="server"></asp:TextBox>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <asp:Button CssClass="btn btn-skin pull-right" ID="btnContactUs" runat="server" Text="Send Message" OnClick="btnContactUs_Click" ValidationGroup="vgContactUs"></asp:Button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="widget-contact">
+                            <h5>Main Office</h5>
+                            <address>
+                                <strong>Clarion Motels</strong><br>
+                                No. 123, One Two Three Rd.,<br>
+                                City, Country<br>
+                                <abbr title="Phone">P:</abbr>
+                                (+00)-00-000000
+                            </address>
+                            <address>
+                                <strong>Email</strong><br>
+                                <a href="mailto:#">contact@clarionmotels.com</a>
+                            </address>
+                            <address>
+                                <strong>We're on social networks</strong><br>
+                                <ul class="company-social">
+                                    <li class="social-facebook"><a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                    <li class="social-twitter"><a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                    <li class="social-google"><a href="https://plus.google.com/" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                                </ul>
+                            </address>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12">
+                        <div class="wow shake" data-wow-delay="0.4s">
+                            <div class="page-scroll marginbot-30">
+                                <a href="#scroll-to-top" id="totop" class="btn btn-circle">
+                                    <i class="fa fa-angle-double-up animated"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <p>&copy;Copyright 2017 - Clarion Motel. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </form>
+
+    <!-- Core JavaScript Files -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.scrollTo.js"></script>
+    <script src="js/wow.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="js/custom.js"></script>
+</body>
+</html>
