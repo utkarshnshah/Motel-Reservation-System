@@ -12,9 +12,8 @@ ntcd.Password = "Password";
 
 Also, allow "Less secure apps" to use your email account to send emails. This setting can be found in your email account settings.
 
-------------------------------------------------------------------------------------------------------------------------------------------
 For Demo:
 User Name: john
 Password: 123456
-------------------------------------------------------------------------------------------------------------------------------------------
+
 The project was developed to accomplish the study program. The data in any form in the project is only for demo and has no association to the real companies or products. There are limitations to some functionality and less features in the project due to limited time for development.
