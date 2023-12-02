@@ -1,6 +1,6 @@
 # Motel Room Reservation System
 
-The objective of this online web project is to provide accessibility to the guests to make motel’s reservations easy and intuitive through a very simple and clean user interface and user experience.
+The objective of this project is to provide accessibility to the guests to make motel’s reservations easy and intuitive through a very simple and clean user interface and user experience.
 
 Settings to be done for proper working of the project:
 
